@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiShoppingBag } from 'react-icons/fi';
 import { BiSolidPencil } from 'react-icons/bi';
+import { login, logout } from '../api/firebase';
 
 export default function Header() {
+  const [user, setUser] = useState();
+
+  const handleLogin = () => {
+    login().then(setUser);
+  };
+  const handleLogout = () => {
+    logout().then(setUser);
+  };
+
   return (
     <header className='p-3 flex justify-between border-b border-gray-500'>
       <Link to='/' className='flex items-center text-4xl'>
@@ -16,7 +26,8 @@ export default function Header() {
         <Link to='/products/new' className='text-xl'>
           <BiSolidPencil />
         </Link>
-        <Link to='/'>Login</Link>
+        {!user && <button onClick={handleLogin}>Login</button>}
+        {user && <button onClick={handleLogout}>Logout</button>}
       </nav>
     </header>
   );
