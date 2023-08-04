@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiShoppingBag } from 'react-icons/fi';
 import { BiSolidPencil } from 'react-icons/bi';
-import { login, logout } from '../api/firebase';
+import { login, logout, onUserStateChange } from '../api/firebase';
 
 export default function Header() {
   const [user, setUser] = useState();
+
+  useEffect(() => {
+    onUserStateChange((user) => {
+      console.log(user);
+      setUser(user);
+    });
+  }, []);
 
   const handleLogin = () => {
     login().then(setUser);
