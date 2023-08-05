@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiShoppingBag } from 'react-icons/fi';
 import { BiSolidPencil } from 'react-icons/bi';
-import { login, logout, onUserStateChange } from '../api/firebase';
 import User from './User';
+import Button from './ui/Button';
+import { useAuthContext } from './context/AuthContext';
 
 export default function Header() {
-  const [user, setUser] = useState();
-
-  useEffect(() => {
-    onUserStateChange(setUser);
-  }, []);
+  const { user, login, logout } = useAuthContext();
 
   return (
     <header className='p-3 flex justify-between border-b border-gray-500'>
@@ -20,13 +17,15 @@ export default function Header() {
       </Link>
       <nav className='flex items-center gap-4 font-bold text-lg'>
         <Link to='/products'>Products</Link>
-        <Link to='/carts'>Carts</Link>
-        <Link to='/products/new' className='text-xl'>
-          <BiSolidPencil />
-        </Link>
+        {user && <Link to='/carts'>Carts</Link>}
+        {user && user.isAdmin && (
+          <Link to='/products/new' className='text-xl'>
+            <BiSolidPencil />
+          </Link>
+        )}
         {user && <User user={user} />}
-        {!user && <button onClick={login}>Login</button>}
-        {user && <button onClick={logout}>Logout</button>}
+        {!user && <Button text={'Login'} onClick={login}></Button>}
+        {user && <Button text={'Logout'} onClick={logout}></Button>}
       </nav>
     </header>
   );
