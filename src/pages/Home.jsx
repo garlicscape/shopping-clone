@@ -1,5 +1,10 @@
 import React from 'react';
 
 export default function Home() {
-  return <div>Home</div>;
+  //const []
+  return (
+    <section>
+      <img src={process.env.PUBLIC_URL + 'headerPhoto.png'} alt='dd' />
+    </section>
+  );
 }

@@ -49,6 +49,16 @@ async function adminUser(user) {
     });
 }
 
+export async function getProductsData() {
+  return get(ref(database, 'products')) //
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        return Object.values(snapshot.val());
+      }
+      return [];
+    });
+}
+
 export async function addNewProduct(product, imageUrl) {
   const id = uuid();
   return set(ref(database, `products/${id}`), {
