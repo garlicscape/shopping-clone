@@ -5,6 +5,7 @@ import { BiSolidPencil } from 'react-icons/bi';
 import User from './User';
 import Button from './ui/Button';
 import { useAuthContext } from '../context/AuthContext';
+import CartStatus from './CartStatus';
 
 export default function Header() {
   const { user, login, logout } = useAuthContext();
@@ -17,7 +18,11 @@ export default function Header() {
       </Link>
       <nav className='flex items-center gap-4 font-bold text-lg'>
         <Link to='/products'>Products</Link>
-        {user && <Link to='/carts'>Carts</Link>}
+        {user && (
+          <Link to='/carts'>
+            <CartStatus />
+          </Link>
+        )}
         {user && user.isAdmin && (
           <Link to='/products/new' className='text-xl'>
             <BiSolidPencil />
