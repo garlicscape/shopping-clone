@@ -1,10 +1,12 @@
 import React from 'react';
+import Products from '../components/Products';
+import Banner from '../components/Banner';
 
 export default function Home() {
-  //const []
   return (
     <section>
-      <img src={process.env.PUBLIC_URL + 'headerPhoto.png'} alt='dd' />
+      <Banner />
+      <Products />
     </section>
   );
 }
