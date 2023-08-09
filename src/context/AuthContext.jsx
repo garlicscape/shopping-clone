@@ -8,7 +8,6 @@ export function AuthContextProvider({ children }) {
 
   useEffect(() => {
     onUserStateChange((user) => {
-      console.log(user);
       localStorage.setItem('user', JSON.stringify(user));
       setUser(user);
     });
