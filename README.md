@@ -28,3 +28,19 @@
 <img alt="react" src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=white"/> <img alt="javascript" src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=white"/> <img alt="firebase" src="https://img.shields.io/badge/firebase-FFCA28?style=flat-square&logo=firebase&logoColor=white"/> <img alt="tailwindcss" src="https://img.shields.io/badge/tailwindcss-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/> <br>
 
 ## 화면 구성
+#### ▪ 메인화면
+![main](https://github.com/garlicscape/shopping-clone/assets/49513878/d82f8396-04b4-4279-8798-d85b1233e6df)
+<br><br>
+#### ▪ 로그인하면 사용자에 따라 메뉴가 활성화
+![admin](https://github.com/garlicscape/shopping-clone/assets/49513878/fa37d4a5-c67b-4248-bb9f-0d46be98bae2)
+사진은 관리자 계정으로 장바구니와 새 상품 등록 메뉴가 생김
+<br><br>
+
+#### ▪ 상품 상세 페이지
+![detail](https://github.com/garlicscape/shopping-clone/assets/49513878/ade92528-9716-4588-b72f-018501bc6874)
+<br><br>
+#### ▪ 장바구니
+![cart](https://github.com/garlicscape/shopping-clone/assets/49513878/c21b7869-774d-4742-a3a4-50554ff9bb7f)
+<br><br>
+#### ▪ 새 상품 등록 페이지
+![new](https://github.com/garlicscape/shopping-clone/assets/49513878/0d1a435a-ee83-4001-9af5-4c4e60fd243b)
